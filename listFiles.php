@@ -22,7 +22,7 @@ foreach ($rii as $file) {
 }
 
 // File list excluding the current one
-$fileList =shapeFileList($files); //print_r($noThisFileArray);
+$fileList =shapeFileList($files);
 
 // HTML output of files
 htmlOutput($fileList);
@@ -43,11 +43,12 @@ function shapeFileList(array $thisDirFiles){
 
         $file =fileFromPath($val);
 
-        if($file != $thisFile) { //echo $file. ' -=- '.PHP_EOL;
+        if($file != $thisFile) {
 
             //shape url
             $url =shapeUrl($val);
 
+            // shape array with all needed data
             $fileData =array('file'=>$file, 'path'=>$val, 'url' =>$url);
 
             array_push($noThisFileArray, $fileData);
