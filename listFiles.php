@@ -38,12 +38,10 @@ function shapeFileList(array $thisDirFiles){
     $noThisFileArray=[];
 
     $thisFile =fileFromPath(__FILE__);
-    //echo $thisFile; die;
 
     foreach($thisDirFiles as $key=>$val){
 
         $file =fileFromPath($val);
-        //echo $val; die('sdfsd');
 
         if($file != $thisFile) { //echo $file. ' -=- '.PHP_EOL;
 
@@ -56,7 +54,6 @@ function shapeFileList(array $thisDirFiles){
         }
     }
 
-    //var_dump($noThisFileArray); die(' +++');
     if(!empty($noThisFileArray)) return $noThisFileArray;
 }
 
